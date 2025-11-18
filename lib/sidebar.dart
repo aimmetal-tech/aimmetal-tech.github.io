@@ -13,6 +13,7 @@ Sidebar sidebar() {
         title: 'Flutter系列',
         links: [
           SidebarLink(text: "Flutter入门", href: '/flutter/flutter-get-started'),
+          SidebarLink(text: "更好Flutter", href: '/flutter/better-flutter'),
           SidebarLink(text: "Flutter Riverpod", href: '/flutter/flutter-riverpod'),
         ],
       ),
