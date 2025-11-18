@@ -22,6 +22,22 @@ Component header() {
             css(':root').styles(raw: {'scroll-padding-top': '4.5rem'}),
           ],
         ),
+        // MathJax 配置 + 脚本, 用于渲染 markdown 中的 LaTeX 公式.
+        script(
+          content: r'''
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']]
+  },
+  options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+};
+''',
+        ),
+        script(
+          src: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
+          defer: true,
+        ),
         // Style(
         //   styles: [
         //     // 对于链接🔗默认不显示横线，只有在鼠标悬停时才显示横线
