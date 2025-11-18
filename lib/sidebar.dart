@@ -3,7 +3,6 @@ import 'package:jaspr_content/components/sidebar.dart';
 Sidebar sidebar() {
   return Sidebar(
     groups: [
-      // Adds navigation links to the sidebar.
       // SideBarGroup是一个组
       SidebarGroup(
         links: [
@@ -15,6 +14,12 @@ Sidebar sidebar() {
         links: [
           SidebarLink(text: "Flutter入门", href: '/flutter/flutter-get-started'),
           SidebarLink(text: "Flutter Riverpod", href: '/flutter/flutter-riverpod'),
+        ],
+      ),
+      SidebarGroup(
+        title: '数据结构',
+        links: [
+          SidebarLink(text: "第3章 树", href: 'data-structure/chapter-3-tree'),
         ],
       ),
       SidebarGroup(
