@@ -22,6 +22,22 @@ Component header() {
             css(':root').styles(raw: {'scroll-padding-top': '4.5rem'}),
           ],
         ),
+        Style(
+          styles: [
+            css('.content .badges').styles(
+              raw: {
+                'display': 'flex',
+                'gap': '8px',
+                'flex-wrap': 'wrap',
+                'justify-content': 'flex-start',
+                'align-items': 'center',
+              },
+            ),
+            css('.content .badges img').styles(raw: {
+              'pointer-events': 'none',
+            }),
+          ],
+        ),
         // MathJax 配置 + 脚本, 用于渲染 markdown 中的 LaTeX 公式.
         script(
           content: r'''
@@ -38,17 +54,6 @@ window.MathJax = {
           src: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js',
           defer: true,
         ),
-        // Style(
-        //   styles: [
-        //     // 对于链接🔗默认不显示横线，只有在鼠标悬停时才显示横线
-        //     css('.content a', [
-        //       css('&').styles(textDecoration: TextDecoration.none),
-        //       css('&:hover').styles(
-        //         textDecoration: TextDecoration(line: TextDecorationLine.underline),
-        //       ),
-        //     ]),
-        //   ],
-        // ),
       ],
     ),
     const Header(

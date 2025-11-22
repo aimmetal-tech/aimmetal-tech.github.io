@@ -1,3 +1,8 @@
 social:
   - name: Github
     url: https://github.com/aimmetal-tech
+    badge_label: GitHub
+    badge_color: 000000
+    badge_logo: github
+    badge_logoColor: white
+    badge_style: for-the-badge

@@ -14,6 +14,7 @@ Sidebar sidebar() {
         links: [
           SidebarLink(text: "Flutter入门", href: '/flutter/flutter-get-started'),
           SidebarLink(text: "更好Flutter", href: '/flutter/better-flutter'),
+          SidebarLink(text: "状态state", href: '/flutter/state'),
           SidebarLink(text: "Flutter Riverpod", href: '/flutter/flutter-riverpod'),
         ],
       ),
