@@ -22,6 +22,7 @@ Sidebar sidebar() {
         title: '数据结构',
         links: [
           SidebarLink(text: "第3章 树", href: 'data-structure/chapter-3-tree'),
+          SidebarLink(text: "3.2 Part3", href: 'data-structure/chapter-3-2-3-bst-avl'),
         ],
       ),
       SidebarGroup(

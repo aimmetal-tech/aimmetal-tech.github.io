@@ -1,5 +1,5 @@
 ---
-title: Make Flutter Better
+title: Better Flutter
 description: 插件、依赖dependences、Widget、语法糖推荐
 ---
 
@@ -17,7 +17,7 @@ description: 插件、依赖dependences、Widget、语法糖推荐
 
 - Dart Data Class Generator
 
-  快速生成模型类，包括构造工厂函数 `fromJson()`
+  根据成员变量快速生成构造函数以及构造工厂函数 `fromJson()`和 `ToJson()`
 
 - Error Lens
 
@@ -43,6 +43,10 @@ description: 插件、依赖dependences、Widget、语法糖推荐
 
 - json_serializable
 
+  搭配网站`https://app.quicktype.io/`使用,
+
+  粘贴后端返回 JSON，获取对应代码,
+
   自动生成 `fromJson()` 和 `toJson()` 方法
 
 - riverpod
@@ -53,10 +57,53 @@ description: 插件、依赖dependences、Widget、语法糖推荐
 
   快速搭建软件使用前的介绍页面
 
+- flutter_spinkit
+
+  提供多种加载动画
+
+- ffigen
+
+  自动生成 FFI 绑定的工具, 用于调用 C/C++函数
+
 ## Widget
 
 - SliverAppBar
 
   在 `CustomScrollView` 的 `slivers` 中传入。可实现折叠 AppBar 功能
 
--
+## 语法糖
+
+- `??=` 当空时才赋值
+
+```
+// sugar
+a ??= b;
+
+// equal
+if (a == null) {
+  a = b;
+}
+```
+
+- `...` 展开运算符
+
+```
+var a = [1, 2, 3];
+var b = [0, ...a, 4];
+print(b); // [0, 1, 2, 3, 4]
+```
+
+- `..` 级联运算符，对同一个对象连续调用多个方法、设置多个属性，而不需要重复对象变量
+
+```
+// sugar
+object
+  ..method1()
+  ..method2()
+  ..property = value;
+
+// equal
+object.method1();
+object.method2();
+object.property = value;
+```
