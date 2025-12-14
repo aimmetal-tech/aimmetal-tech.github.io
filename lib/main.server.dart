@@ -11,17 +11,17 @@ import 'package:jaspr_content/components/code_block.dart';
 import 'package:jaspr_content/components/image.dart';
 import 'package:jaspr_content/jaspr_content.dart';
 import 'package:jaspr_content/theme.dart';
-import 'package:my_jaspr_site/docs_layout.dart';
+import 'package:blog_of_aimmetal/docs_layout.dart';
 
 import 'components/clicker.dart';
 
 // This file is generated automatically by Jaspr, do not remove or edit.
-import 'jaspr_options.dart';
+import 'main.server.options.dart';
 
 void main() {
   // Initializes the server environment with the generated default options.
   Jaspr.initializeApp(
-    options: defaultJasprOptions,
+    options: defaultServerOptions,
   );
 
   // Starts the app.
@@ -56,7 +56,7 @@ class MyApp extends StatelessComponent {
         // Adds a custom Jaspr component to be used as <Clicker/> in markdown.
         CustomComponent(
           pattern: 'Clicker',
-          builder: (_, __, ___) => Clicker(),
+          builder: (_, _, _) => Clicker(),
         ),
         // Adds zooming and caption support to images.
         Image(zoom: true),

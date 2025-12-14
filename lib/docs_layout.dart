@@ -1,7 +1,8 @@
 import 'package:jaspr_content/components/header.dart';
 import 'package:jaspr_content/components/theme_toggle.dart';
 import 'package:jaspr_content/jaspr_content.dart';
-import 'package:my_jaspr_site/sidebar.dart';
+import 'package:blog_of_aimmetal/sidebar.dart';
+import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 DocsLayout docsLayout() {
@@ -13,7 +14,7 @@ DocsLayout docsLayout() {
 }
 
 Component header() {
-  return fragment([
+  return Component.fragment([
     Document.head(
       children: [
         Style(

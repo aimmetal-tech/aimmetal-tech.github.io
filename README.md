@@ -1,6 +1,6 @@
-# my_jaspr_site
+# AimMetal's Blog Site
 
-A documentation site built with Jaspr
+A documentation site built with Jaspr 0.22.0
 
 ## Running the project
 
