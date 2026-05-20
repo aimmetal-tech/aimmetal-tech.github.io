@@ -1,0 +1,25 @@
+baseURL = 'https://aimmetal-tech.github.io/'
+locale = 'zh-cn'
+title = "Blog of AimMetal"
+theme = "paper"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
+
+[params]
+  color = "linen"
+  github = "aimmetal-tech"
+  rss = true
+  name = "AimMetal"
+  bio = "Simple makes Complex"
+  math = true

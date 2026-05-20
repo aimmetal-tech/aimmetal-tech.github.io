@@ -1,0 +1,5 @@
+# Generated website static files
+public/
+
+# Hugo server temporary files
+.hugo_build.lock
