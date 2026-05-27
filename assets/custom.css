@@ -1,0 +1,100 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+.post-with-toc {
+  position: relative;
+}
+
+.post-toc {
+  margin: 0 0 2.5rem;
+  padding: 1rem 1.125rem;
+  border: 1px solid rgb(0 0 0 / 8%);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 42%);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.dark .post-toc {
+  border-color: rgb(255 255 255 / 10%);
+  background: rgb(255 255 255 / 5%);
+}
+
+.post-toc-title {
+  margin-bottom: 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  opacity: 0.64;
+}
+
+.post-toc nav {
+  margin: 0;
+}
+
+.post-toc ul,
+.post-toc ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.post-toc li {
+  margin: 0.35rem 0;
+}
+
+.post-toc li li {
+  margin-top: 0.3rem;
+  padding-left: 0.9rem;
+}
+
+.post-toc a {
+  display: block;
+  overflow-wrap: anywhere;
+  color: inherit;
+  text-decoration: none !important;
+  opacity: 0.62;
+  transition:
+    opacity 160ms ease,
+    color 160ms ease;
+}
+
+.post-toc a:hover,
+.post-toc a:focus-visible {
+  opacity: 1;
+}
+
+@media (min-width: 1120px) {
+  .post-toc {
+    position: fixed;
+    top: 7rem;
+    left: calc(50% + 390px);
+    width: min(240px, calc((100vw - 780px) / 2 - 48px));
+    max-height: calc(100vh - 9rem);
+    margin: 0;
+    overflow: auto;
+    padding: 0.25rem 0 0.25rem 1.125rem;
+    border: 0;
+    border-left: 1px solid rgb(0 0 0 / 10%);
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .dark .post-toc {
+    border-color: rgb(255 255 255 / 12%);
+    background: transparent;
+  }
+}
+
+@media (max-width: 1119px) {
+  .post-toc {
+    position: sticky;
+    top: 1rem;
+    z-index: 5;
+    max-height: 45vh;
+    overflow: auto;
+    backdrop-filter: blur(14px);
+  }
+}
