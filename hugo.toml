@@ -1,6 +1,6 @@
 baseURL = 'https://aimmetal-tech.github.io/'
 locale = 'zh-cn'
-title = "Blog of AimMetal"
+title = "生活&技术&学习"
 theme = "paper"
 
 [caches]
