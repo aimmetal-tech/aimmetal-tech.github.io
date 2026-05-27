@@ -3,6 +3,34 @@ html {
   scroll-padding-top: 6rem;
 }
 
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.image-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 0 !important;
+}
+
+.image-grid-item {
+  margin: 0 !important;
+}
+
+.image-grid-item figcaption {
+  margin-top: 0.35rem;
+  color: inherit;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  text-align: center;
+  opacity: 0.72;
+}
+
 .post-with-toc {
   position: relative;
 }
@@ -96,5 +124,11 @@ html {
     max-height: 45vh;
     overflow: auto;
     backdrop-filter: blur(14px);
+  }
+}
+
+@media (max-width: 640px) {
+  .image-grid {
+    gap: 0.35rem;
   }
 }

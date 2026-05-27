@@ -1,0 +1,25 @@
+{{- $prefix := .Get "prefix" -}}
+{{- $images := split (.Get "images") "," -}}
+{{- $labels := split (.Get "labels" | default "") "," -}}
+{{- $transform := .Get "transform" | default "w-600,q-75,f-auto" -}}
+
+<div class="image-grid">
+  {{- range $index, $image := $images -}}
+    {{- $name := strings.TrimSpace $image -}}
+    {{- $label := "" -}}
+    {{- if lt $index (len $labels) -}}
+      {{- $label = strings.TrimSpace (index $labels $index) -}}
+    {{- end -}}
+    <figure class="image-grid-item">
+      <img
+        src="{{ $prefix }}{{ $name }}?tr={{ $transform }}"
+        alt="{{ $label | default (printf "food-%d" (add $index 1)) }}"
+        loading="lazy"
+        decoding="async"
+      >
+      {{- with $label -}}
+        <figcaption>{{ . }}</figcaption>
+      {{- end -}}
+    </figure>
+  {{- end -}}
+</div>
