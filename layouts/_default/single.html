@@ -5,8 +5,23 @@
 
 <div class="{{- if $has_toc -}}post-with-toc{{- end -}}">
   {{- if $has_toc -}}
-  <aside class="post-toc" aria-label="文章目录">
-    <div class="post-toc-title">目录</div>
+  <button
+    class="post-toc-toggle"
+    type="button"
+    aria-label="打开文章目录"
+    aria-controls="post-toc"
+    aria-expanded="false"
+  >
+    <span class="post-toc-toggle-icon" aria-hidden="true"></span>
+  </button>
+  <button class="post-toc-backdrop" type="button" aria-label="关闭文章目录" hidden></button>
+  <aside class="post-toc" id="post-toc" aria-label="文章目录">
+    <div class="post-toc-header">
+      <div class="post-toc-title">目录</div>
+      <button class="post-toc-close" type="button" aria-label="关闭文章目录">
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
     {{- $toc -}}
   </aside>
   {{- end -}}
@@ -140,5 +155,56 @@
     {{- end -}}
   </article>
 </div>
+
+{{- if $has_toc -}}
+<script>
+  (() => {
+    const toggle = document.querySelector('.post-toc-toggle');
+    const toc = document.querySelector('.post-toc');
+    const backdrop = document.querySelector('.post-toc-backdrop');
+    const close = document.querySelector('.post-toc-close');
+
+    if (!toggle || !toc || !backdrop || !close) return;
+
+    const mobileQuery = window.matchMedia('(max-width: 1119px)');
+
+    const setOpen = (isOpen) => {
+      document.documentElement.classList.toggle('post-toc-open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      toc.setAttribute('aria-hidden', String(mobileQuery.matches && !isOpen));
+      backdrop.hidden = !isOpen;
+    };
+
+    const syncForViewport = () => {
+      if (mobileQuery.matches) {
+        setOpen(document.documentElement.classList.contains('post-toc-open'));
+      } else {
+        document.documentElement.classList.remove('post-toc-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toc.setAttribute('aria-hidden', 'false');
+        backdrop.hidden = true;
+      }
+    };
+
+    toggle.addEventListener('click', () => {
+      setOpen(!document.documentElement.classList.contains('post-toc-open'));
+    });
+    backdrop.addEventListener('click', () => setOpen(false));
+    close.addEventListener('click', () => setOpen(false));
+    toc.addEventListener('click', (event) => {
+      if (event.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    });
+    if (mobileQuery.addEventListener) {
+      mobileQuery.addEventListener('change', syncForViewport);
+    } else {
+      mobileQuery.addListener(syncForViewport);
+    }
+    syncForViewport();
+  })();
+</script>
+{{- end -}}
 
 {{- end -}}
