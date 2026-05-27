@@ -167,12 +167,26 @@
     if (!toggle || !toc || !backdrop || !close) return;
 
     const mobileQuery = window.matchMedia('(max-width: 1119px)');
+    let backdropTimer;
 
     const setOpen = (isOpen) => {
+      window.clearTimeout(backdropTimer);
+      if (isOpen) {
+        backdrop.hidden = false;
+        backdrop.offsetHeight;
+      }
+
       document.documentElement.classList.toggle('post-toc-open', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
       toc.setAttribute('aria-hidden', String(mobileQuery.matches && !isOpen));
-      backdrop.hidden = !isOpen;
+
+      if (!isOpen) {
+        backdropTimer = window.setTimeout(() => {
+          if (!document.documentElement.classList.contains('post-toc-open')) {
+            backdrop.hidden = true;
+          }
+        }, 220);
+      }
     };
 
     const syncForViewport = () => {
