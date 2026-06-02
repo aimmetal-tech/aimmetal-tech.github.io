@@ -1,0 +1,33 @@
+<footer
+  class="mx-auto min-h-[4.5rem] max-w-(--w) px-8 py-4 text-xs tracking-wider uppercase opacity-60"
+>
+  {{- with site.Params.icp }}
+  <div class="text-center normal-case" style="margin-bottom: 1rem">
+    <a
+      class="link"
+      href="https://beian.miit.gov.cn/"
+      rel="noopener"
+      target="_blank"
+      >{{ . }}</a
+    >
+  </div>
+  {{- end }}
+  <div class="flex items-center">
+    <div class="mr-auto">
+      {{- if site.Copyright -}} {{- site.Copyright -}} {{- else -}} &copy; {{-
+      now.Year }}
+      <a class="link" href="{{- `` | absURL -}}">{{- site.Title -}}</a>
+      {{- end -}}
+    </div>
+    <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+      >powered by hugo</a
+    >
+    <a
+      class="link"
+      href="https://github.com/nanxiaobei/hugo-paper"
+      rel="noopener"
+      target="_blank"
+      >hugo-paper</a
+    >
+  </div>
+</footer>
