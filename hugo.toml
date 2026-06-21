@@ -1,6 +1,6 @@
 baseURL = 'https://liuliurq.com/'
 locale = 'zh-cn'
-title = "生活&技术&学习"
+title = "67号房间"
 theme = "paper"
 
 [caches]
