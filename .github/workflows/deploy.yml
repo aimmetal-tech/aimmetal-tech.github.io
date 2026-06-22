@@ -37,10 +37,10 @@ jobs:
         run: npm ci
 
       - name: Install Quartz plugins
-        run: npm run quartz -- plugin install
+        run: node ./quartz/bootstrap-cli.mjs plugin install
 
       - name: Build Quartz
-        run: npm run quartz -- build
+        run: node ./quartz/bootstrap-cli.mjs build
 
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v4
