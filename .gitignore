@@ -1,5 +1,13 @@
-# Generated website static files
-public/
-
-# Hugo server temporary files
-.hugo_build.lock
+.DS_Store
+.gitignore
+node_modules
+public
+prof
+tsconfig.tsbuildinfo
+.obsidian
+.quartz-cache
+private/
+.replit
+replit.nix
+.quartz/
+quartz/cli/tui/dist/
