@@ -51,6 +51,27 @@ footer a[href*="beian.mps.gov.cn"]::before {
   background: url("/static/beian.png") center / contain no-repeat;
 }
 
+@media all and ($mobile) {
+  footer ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  footer li:has(a[href*="beian.miit.gov.cn"]) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  footer li:has(a[href*="beian.mps.gov.cn"]) {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  footer a[href*="beian.miit.gov.cn"],
+  footer a[href*="beian.mps.gov.cn"] {
+    font-size: 0.9rem;
+  }
+}
+
 // page标题字体
 .page-title,
 .page-title a {
