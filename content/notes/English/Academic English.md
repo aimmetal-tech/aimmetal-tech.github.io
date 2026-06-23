@@ -23,8 +23,13 @@ tags:
 
 ### 学术不端 Academic Misconduct
 
-- plagiarism 抄袭。
-- self-plagiarism 自我抄袭，包括salami slicing/salami publication，把原本属于一项完整研究的数据或成果，刻意拆分成好几篇零碎的微型论文来发表，以此刷论文篇数。
+- plagiarism 抄袭
+- self-plagiarism 自我抄袭
+
+  包括salami slicing/salami publication，
+
+  把原本属于一项完整研究的数据或成果，刻意拆分成好几篇零碎的微型论文来发表，以此刷论文篇数。
+
 - misrepresentation 失实陈述
 - fabrication 编造数据或结果
 - falsification 篡改
@@ -43,14 +48,16 @@ tags:
 
 ### 3-Pass Reading Strategy
 
-1. 1-pass 快速了解论文大意，判断是否值得继续读。
-   title abstract intro headings
-   mathematical content briefly
-   conclusion
-   references
+1. pass 快速了解论文大意，判断是否值得继续读。
+   - title abstract intro headings
+   - mathematical content briefly
+   - conclusion
+   - references
+
    1-pass 找5c：category context correctness contribution clarity
-2. 2-pass 理解论文主线和支撑证据。
-3. 3-pass 深入理解，几乎重新实现论文。
+
+2. pass 理解论文主线和支撑证据。
+3. pass 深入理解，几乎重新实现论文。
 
 ## Week2-2
 
