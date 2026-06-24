@@ -1,6 +1,9 @@
 ---
-title: "深度学习笔记"
+title: 深度学习笔记
 created: 2026-05-20
+tags:
+  - 深度学习
+modified: 2026-06-24T09:25:48+08:00
 ---
 
 > 本笔记基于李宏毅老师的机器学习（2021）课程记录
@@ -23,19 +26,19 @@ created: 2026-05-20
 
 ### 线性回归
 
-一个简单的线性回归如：y=wx+b，其中我们称w为权重，b为偏差。
+一个简单的线性回归如：y=wx+b，其中我们称 w 为权重，b 为偏差。
 
 它们的英文分别为**weight，bias**
 
 ### 非线性回归
 
-sigmoid函数
+sigmoid 函数
 
 $$
 y=c\frac{1}{1+e^{-(b+wx_1)}}=csigmod(b+wx_1)
 $$
 
-ReLU函数
+ReLU 函数
 
 $$
 y=max(0,x)
@@ -53,15 +56,15 @@ DNN（Deep Neural Network）深度神经网络
 
 ---
 
-我们将w、b等所有的未知参数统称为θ
+我们将 w、b 等所有的未知参数统称为 θ
 
-θ可以通过设置batch_size划分为多个相等的batch
+θ 可以通过设置 batch_size 划分为多个相等的 batch
 
-我们通过一个一个的batch来计算loss，然后再计算梯度
+我们通过一个一个的 batch 来计算 loss，然后再计算梯度
 
-batch的数量等于1个epoch的更新参数的次数
+batch 的数量等于 1 个 epoch 的更新参数的次数
 
-1个epoch = 把所有的batch都看过一遍
+1 个 epoch = 把所有的 batch 都看过一遍
 
 ![batch-epoch](assets/batch-epoch.png)
 
@@ -79,10 +82,10 @@ SGD（Stochastic Gradient Descent）随机梯度下降
 
 ![general-guide-on-dl](assets/general-guide-on-dl.png)
 
-模型的bias:
+模型的 bias:
 
-model设计过于简单，如线性回归模型永远只能是一条直接，只有加入了sigmoid或者relu才能变成曲线
+model 设计过于简单，如线性回归模型永远只能是一条直接，只有加入了 sigmoid 或者 relu 才能变成曲线
 
 ### 局部最低点和鞍点
 
-Hessian Matrix海森矩阵
+Hessian Matrix 海森矩阵

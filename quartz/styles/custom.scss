@@ -104,3 +104,32 @@ button#explorer .fold {
   height: 1rem;
   overflow: visible;
 }
+
+/* Quartz 5 默认 KaTeX：行内 LaTeX 放大 */
+.katex {
+  font-size: 1.2em !important;
+}
+
+/* Quartz 5 默认 KaTeX：块级 LaTeX 放大 */
+.katex-display .katex {
+  font-size: 1.4em !important;
+}
+
+article .katex-display > .katex {
+  display: inline-block;
+  text-align: initial;
+}
+
+/* 修复右侧 TOC 太长时底部被截断 */
+.toc {
+  min-height: 0;
+  max-height: calc(100dvh - 6rem);
+}
+
+.toc ul.toc-content.overflow {
+  overflow-y: auto !important;
+  max-height: calc(100dvh - 10rem) !important;
+  padding-bottom: 4rem;
+  box-sizing: border-box;
+}
+
