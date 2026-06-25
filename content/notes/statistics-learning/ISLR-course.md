@@ -3,7 +3,7 @@ title: 高统笔记
 created: 2026-06-22
 tags:
   - 高统
-modified: 2026-06-24T11:08:19+08:00
+modified: 2026-06-24T11:17:36+08:00
 ---
 
 ## 监督学习
@@ -137,6 +137,8 @@ $$
 $$
 \hat{\beta_{0}}=\overline{y}-\hat{\beta_{1}}\overline{x}
 $$
+
+$\sigma^2=Var(\epsilon)$
 
 #### 标准误差 SE
 
